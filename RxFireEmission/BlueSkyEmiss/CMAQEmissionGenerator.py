@@ -14,8 +14,8 @@ bsp_filename = "/Volumes/ZONGRUN_BACKUP_2/CDC/20200401/SE2020_04_01_out.json"
 file1 = emiss_dir + sample_file_name
 file2 = emiss_dir + output_name
 
-# convert unit
-convert_to_g_s = (1000 * 1000)/3600
+# convert unit (us ton)
+convert_to_g_s = (907184.74)/3600
 
 
 def convert_to_mole_s(molecule_weight):

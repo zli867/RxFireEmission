@@ -15,7 +15,7 @@ file1 = emiss_dir + sample_file_name
 file2 = emiss_dir + output_name
 
 # convert unit (us ton)
-convert_to_g_s = (907184.74)/3600
+convert_to_g_s = (1000000)/3600
 
 
 def convert_to_mole_s(molecule_weight):

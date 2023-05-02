@@ -2,7 +2,7 @@
 ## Environment Set Up
 The environment is validated in a MacOS laptop. Use the following command to build up the python environment.
 ```
-conda env create -f datafusion.yml
+conda env create -f environment_Rx.yml
 ```
 
 ## Code Description

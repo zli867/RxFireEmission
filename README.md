@@ -43,6 +43,6 @@ Due to the size of data, we store our data at:. Or directly contact author for r
     | ------ | ----| ------ | ----| ------ |---|
 
 ## Authorship
-* The paper for the modules is submitted to Remote Sensing.
+* The paper for the modules is accepted by Remote Sensing :tada:.
 
 * The code is implemented by Zongrun Li (zli867@gatech.edu)

@@ -274,7 +274,7 @@ def findSpatialIndex(fire_x, fire_y, X_ctr, Y_ctr):
     return x_idx, y_idx
 
 
-def dailyEmission(mcip_gridcro2d, bsp_filename):
+def dailyEmission(mcip_gridcro2d, bsp_filename, select_species):
     """
 
     :param mcip_gridcro2d: CMAQ MCIP cro2d output
@@ -283,7 +283,6 @@ def dailyEmission(mcip_gridcro2d, bsp_filename):
     (notice in Southeastern US, we could have case which emission at 24:00 (next day))
     """
     # Unit tons/hour
-    select_species = ["CO", "SO2", "NH3", "NOx", "PM10", "PM2.5", "VOC"]
 
     cmaq_2d_info = CMAQGrid2D(mcip_gridcro2d)
     # CMAQ grid definition
@@ -343,14 +342,13 @@ def dailyEmission(mcip_gridcro2d, bsp_filename):
     return emission_tensor_daily
 
 
-def eventEmission(bsp_filename):
+def eventEmission(bsp_filename, select_species):
     """
 
     :param bsp_filename: blueSKY output
     :return: return a dataframe matrix [FIREID,AREA,DAY,LATI,LONGI,selected_species]
     """
     # Unit tons/hour
-    select_species = ["CO", "SO2", "NH3", "NOx", "PM10", "PM2.5", "VOC"]
     # read fire data
     with open(bsp_filename) as jsfile:
         bluesky_data = json.load(jsfile)
@@ -387,7 +385,7 @@ def eventEmission(bsp_filename):
     return emission_df
 
 
-def verticalHourlyEmission(metcros3d, bsp_filename):
+def verticalHourlyEmission(metcros3d, bsp_filename, select_species):
     """
 
     :param metcros3d: MCIP 3D Grid Information
@@ -395,7 +393,6 @@ def verticalHourlyEmission(metcros3d, bsp_filename):
     :return: a emission tensor (species, MCIP time length, LAY, MCIP X length, MCIP Y length)
     """
     # Unit tons/hour
-    select_species = ["CO", "SO2", "NH3", "NOx", "PM10", "PM2.5", "VOC"]
 
     cmaq_3d_info = CMAQGrid3D(metcros3d)
     # CMAQ grid definition
@@ -456,7 +453,7 @@ def verticalHourlyEmission(metcros3d, bsp_filename):
     return emission_tensor
 
 
-def dailyEmissionSE(mcip_gridcro2d, bsp_filename):
+def dailyEmissionSE(mcip_gridcro2d, bsp_filename, select_species):
     """
 
     :param mcip_gridcro2d: CMAQ MCIP cro2d output
@@ -465,7 +462,6 @@ def dailyEmissionSE(mcip_gridcro2d, bsp_filename):
     (notice in Southeastern US, we could have case which emission at 24:00 (next day))
     """
     # Unit tons/hour
-    select_species = ["CO", "SO2", "NH3", "NOx", "PM10", "PM2.5", "VOC"]
 
     cmaq_2d_info = CMAQGrid2D(mcip_gridcro2d)
     # CMAQ grid definition

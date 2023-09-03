@@ -75,7 +75,7 @@ species_mapping = {
 
 
 select_species = ["CO", "SO2", "NH3", "NOx", "PM2.5", "VOC"]
-emission_tensor = verticalHourlyEmission(metcros3d, bsp_filename)
+emission_tensor = verticalHourlyEmission(metcros3d, bsp_filename, select_species)
 met_ds = netCDF4.Dataset(metcros3d)
 # (species, MCIP time length, LAY, MCIP X length, MCIP Y length)
 
